@@ -1,8 +1,8 @@
 package universidadc1g14;
 
 import java.time.LocalDate;
-import universidadc1g14.Clases.Alumno;
-import universidadc1g14.Data.AlumnoData;
+import universidadc1g14.Entidades.Alumno;
+import universidadc1g14.AccesoADatos.AlumnoData;
 
 /**
  *

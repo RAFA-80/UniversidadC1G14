@@ -1,4 +1,4 @@
-package universidadc1g14.Data;
+package universidadc1g14.AccesoADatos;
 
 import java.sql.*;
 import javax.swing.JOptionPane;

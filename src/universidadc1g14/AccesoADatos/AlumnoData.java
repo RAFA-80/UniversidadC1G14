@@ -1,8 +1,8 @@
-package universidadc1g14.Data;
+package universidadc1g14.AccesoADatos;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
-import universidadc1g14.Clases.Alumno;
+import universidadc1g14.Entidades.Alumno;
 
 /**
  *

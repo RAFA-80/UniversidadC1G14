@@ -1,4 +1,4 @@
-package universidadc1g14.Clases;
+package universidadc1g14.Entidades;
 
 import java.time.LocalDate;
 import java.util.Date;
