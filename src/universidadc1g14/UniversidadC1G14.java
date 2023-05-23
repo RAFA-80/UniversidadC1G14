@@ -10,14 +10,19 @@ import universidadc1g14.AccesoADatos.AlumnoData;
  */
 public class UniversidadC1G14 {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // TODO code application logic here
-           Alumno a = new Alumno(3423456,"Messi","Lionel",LocalDate.parse("1987-06-24"),true);
+           Alumno alumno = new Alumno(3423456,"Messi","Lionel",LocalDate.parse("1987-06-24"),true);
            AlumnoData ad = new AlumnoData();
-           ad.guardarAlumno(a);
+           
+           
+           ad.guardarAlumno(alumno);
+           ad.buscarAlumno(1);
+          ad.modificarAlumno(alumno);
+           ad.eliminarAlumno(2);
+           
+           
     }
 
 }
