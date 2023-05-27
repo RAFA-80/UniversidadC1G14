@@ -1,7 +1,6 @@
 package universidadc1g14.Entidades;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  *
@@ -96,7 +95,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return dni + ", " + apellido + ", " + nombre;
+        return "[Id: " + idAlumno + " - Apellido: " + apellido + " - Nombre: " + nombre + "]";
     }
 
 }

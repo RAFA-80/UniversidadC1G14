@@ -1,10 +1,10 @@
 package universidadc1g14.AccesoADatos;
 
 import java.sql.*;
-import javax.swing.JOptionPane;
-import universidadc1g14.Entidades.Alumno;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+import universidadc1g14.Entidades.Alumno;
 
 /**
  *
@@ -20,36 +20,33 @@ public class AlumnoData {
         c = Conexion.getConexion();
     }
 
-    //(Crear,Buscar,Actualizar,Borrar)
-    public void guardarAlumno(Alumno alumno) {
+    //Realizar metodos para usar can la base de datos(Insertar, actualizar, consultar, borrar)
+    public void guardarAlumno(Alumno a) {
 
-        String sql = "INSERT INTO alumno (dni,apellido,nombre,fechaNacimiento,estado) VALUES (?,?,?,?,?)";
-
+        String sql = "INSERT INTO alumno (nombre,apellido,dni,fechaNacimiento,estado) VALUES (?,?,?,?,?)";
         try {
             PreparedStatement ps = c.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, alumno.getDni());
-            ps.setString(2, alumno.getApellido());
-            ps.setString(3, alumno.getNombre());
-            ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
-            ps.setBoolean(5, alumno.isEstado());
+            ps.setString(1, a.getNombre());
+            ps.setString(2, a.getApellido());
+            ps.setInt(3, a.getDni());
+            ps.setDate(4, Date.valueOf(a.getFechaNacimiento()));
+            ps.setBoolean(5, a.isEstado());
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
-                alumno.setIdAlumno(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Alumno agregado");
-            } else {
-
-                JOptionPane.showMessageDialog(null, "No se añadio el Alumno");
-
+                a.setIdAlumno(rs.getInt("idAlumno"));
+                JOptionPane.showMessageDialog(null, "Alumno añadido con exito.");
             }
             ps.close();
+
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno -" + ex.getMessage());
         }
+
     }
 
-    public Alumno buscarAlumno(int id) {
+   public Alumno buscarAlumno(int id) {
         Alumno alumno = new Alumno();
         String sql = "SELECT dni,apellido,nombre,fechaNacimiento FROM alumno WHERE idAlumno=? AND estado = 1";
 
@@ -178,3 +175,4 @@ public class AlumnoData {
     }
 
 }
+

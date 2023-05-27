@@ -61,6 +61,9 @@ public class Materia {
         this.estado = estado;
     }
     
-    
+    @Override
+    public String toString() {
+        return "[IdMateria: " + idMateria + " - Nombre: " + nombre + " - Año: " + anio + "]";
+    }
     
 }
