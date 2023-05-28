@@ -95,7 +95,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "[Id: " + idAlumno + " - Apellido: " + apellido + " - Nombre: " + nombre + "]";
+        return "IdAlumno: " + idAlumno + " - Apellido: " + apellido + " - Nombre: " + nombre + "\n";
     }
 
 }

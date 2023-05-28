@@ -99,6 +99,7 @@ public class MateriaData {
             ps = c.prepareStatement(sql);
             ps.setString(1, m.getNombre());
             ps.setInt(2, m.getAnio());
+            ps.setInt(3, m.getIdMateria());
             int exito = ps.executeUpdate();
 
             if (exito == 1) {

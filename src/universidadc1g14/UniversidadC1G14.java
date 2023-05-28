@@ -139,6 +139,18 @@ public class UniversidadC1G14 {
                             case 3:
                                 JOptionPane.showMessageDialog(null, md.listarMaterias());
                                 break;
+                            case 4:
+                                int idM;
+                                idM = Integer.parseInt(JOptionPane.showInputDialog("Ingresa ID de la materia"));
+                                Materia m1 = md.buscarMateria(idM);
+                                String nombre;
+                                nombre = JOptionPane.showInputDialog("Ingresa Nombre de la materia");
+                                int anio;
+                                anio = Integer.parseInt(JOptionPane.showInputDialog("Ingresa año al que pertenece la materia"));
+                                m1.setNombre(nombre);
+                                m1.setAnio(anio);
+                                md.modificarMateria(m1);
+                                break;
                         }
                     } while (op2 != 6);
 
@@ -153,7 +165,9 @@ public class UniversidadC1G14 {
                                 + "1- Ingresar Inscripcion\n"
                                 + "2- Borrar inscripcion\n"
                                 + "3- Actualizar nota\n"
-                                + "4- Salir"));
+                                + "4- Listar Inscripciones\n"
+                                + "5- Listar Inscripciones por alumno\n"
+                                + "6- Salir"));
 
                         switch (op3) {
                             case 1:
@@ -188,8 +202,16 @@ public class UniversidadC1G14 {
                                 nota = Double.parseDouble(JOptionPane.showInputDialog("Ingresa nota de la materia"));
                                 iData.actualizarNota(i, iMa, nota);
                                 break;
+                            case 4:
+                                JOptionPane.showMessageDialog(null, iData.listarInscripciones());
+                                break;
+                            case 5:
+                                int iA;
+                                iA = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Id alumno"));
+                                JOptionPane.showMessageDialog(null, iData.listarInscripcionesPorAlumno(iA));
+                                break;
                         }
-                    } while (op3 != 4);
+                    } while (op3 != 6);
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Solo se admiten numeros");
                 }
