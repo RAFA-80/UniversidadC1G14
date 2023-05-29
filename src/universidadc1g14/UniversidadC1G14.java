@@ -151,6 +151,10 @@ public class UniversidadC1G14 {
                                 m1.setAnio(anio);
                                 md.modificarMateria(m1);
                                 break;
+                            case 5:
+                                int idMa;
+                                idMa = Integer.parseInt(JOptionPane.showInputDialog("Ingresa ID de la materia"));
+                                md.eliminarMateria(idMa);
                         }
                     } while (op2 != 6);
 
