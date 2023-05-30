@@ -171,7 +171,10 @@ public class UniversidadC1G14 {
                                 + "3- Actualizar nota\n"
                                 + "4- Listar Inscripciones\n"
                                 + "5- Listar Inscripciones por alumno\n"
-                                + "6- Salir"));
+                                + "6- Listar materias cursadas por alumno\n"
+                                + "7- Listar materias no cursadas por alumno\n"
+                                + "8- Listar alumnos por materia\n"
+                                + "9- Salir"));
 
                         switch (op3) {
                             case 1:
@@ -214,8 +217,23 @@ public class UniversidadC1G14 {
                                 iA = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Id alumno"));
                                 JOptionPane.showMessageDialog(null, iData.listarInscripcionesPorAlumno(iA));
                                 break;
+                            case 6:
+                                int iAl;
+                                iAl = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Id alumno"));
+                                JOptionPane.showMessageDialog(null, iData.listarmateriasCursadas(iAl));
+                                break;
+                            case 7:
+                                int iAlu;
+                                iAlu = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Id alumno"));
+                                JOptionPane.showMessageDialog(null, iData.listarmateriasNoCursadas(iAlu));
+                                break;
+                            case 8:
+                                int idM;
+                                idM = Integer.parseInt(JOptionPane.showInputDialog("Ingresa Id de Materia"));
+                                JOptionPane.showMessageDialog(null, iData.listarAlumnoXMateria(idM));
+                                break;
                         }
-                    } while (op3 != 6);
+                    } while (op3 != 9);
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Solo se admiten numeros");
                 }

@@ -16,7 +16,8 @@ public class Conexion {
     private static Connection coneccion;
 
     //Metodo constructor
-    private Conexion() {
+    private Conexion(){
+    
     }
 
     public static Connection getConexion() {
