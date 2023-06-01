@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/AccesoADatos/AlumnoData.java</file>
+            <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/igu/AlumnoView.java</file>
             <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/UniversidadC1G14.java</file>
-            <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/Entidades/Alumno.java</file>
             <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/igu/Inicio.java</file>
-            <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/igu/AlumnoG.java</file>
+            <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/igu/InscripcionView.java</file>
+            <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/igu/NotasView.java</file>
+            <file>file:/C:/Users/rafso/OneDrive/Documentos/NetBeansProjects/UniversidadC1G14/src/universidadc1g14/igu/MateriaView.java</file>
         </group>
     </open-files>
 </project-private>

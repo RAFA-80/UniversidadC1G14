@@ -10,7 +10,7 @@ import universidadc1g14.Entidades.Alumno;
  *
  * @author RAFAEL
  */
-public class AlumnoG extends javax.swing.JInternalFrame {
+public class AlumnoView extends javax.swing.JInternalFrame {
 
     private AlumnoData alumnoData;
     private Conexion conexion;
@@ -18,7 +18,7 @@ public class AlumnoG extends javax.swing.JInternalFrame {
     /**
      * Creates new form NuevoCliente
      */
-    public AlumnoG() {
+    public AlumnoView() {
         initComponents();
         alumnoData = new AlumnoData();
     }
@@ -40,7 +40,7 @@ public class AlumnoG extends javax.swing.JInternalFrame {
         txtId = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        salir = new javax.swing.JButton();
+        limpiar = new javax.swing.JButton();
         actualizar = new javax.swing.JButton();
         guardarB = new javax.swing.JButton();
         buscar = new javax.swing.JButton();
@@ -104,14 +104,14 @@ public class AlumnoG extends javax.swing.JInternalFrame {
         txtNombre.setForeground(new java.awt.Color(102, 153, 255));
         txtNombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        salir.setBackground(new java.awt.Color(204, 204, 255));
-        salir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        salir.setForeground(new java.awt.Color(0, 0, 204));
-        salir.setText("Limpiar");
-        salir.setContentAreaFilled(false);
-        salir.addActionListener(new java.awt.event.ActionListener() {
+        limpiar.setBackground(new java.awt.Color(204, 204, 255));
+        limpiar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        limpiar.setForeground(new java.awt.Color(0, 0, 204));
+        limpiar.setText("Limpiar");
+        limpiar.setContentAreaFilled(false);
+        limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirActionPerformed(evt);
+                limpiarActionPerformed(evt);
             }
         });
 
@@ -224,7 +224,7 @@ public class AlumnoG extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -261,7 +261,7 @@ public class AlumnoG extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(guardarB)
                     .addComponent(actualizar)
-                    .addComponent(salir)
+                    .addComponent(limpiar)
                     .addComponent(borrar))
                 .addGap(18, 18, 18))
         );
@@ -283,18 +283,19 @@ public class AlumnoG extends javax.swing.JInternalFrame {
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
         // TODO add your handling code here:
         if (txtId.getText() != null) {
+            int id = Integer.parseInt(txtId.getText());
             int dni = Integer.parseInt(txtDni.getText());
             String apellido = txtApellido.getText();
             String nombre = txtNombre.getText();
             LocalDate fecha = LocalDate.parse(txtNacimiento.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             boolean activo = cbActivo.isEnabled();
-            Alumno alumno = new Alumno(dni, apellido, nombre, fecha, activo);
+            Alumno alumno = new Alumno(id,dni,apellido,nombre,fecha,activo);
             alumnoData.modificarAlumno(alumno);
         }
 
     }//GEN-LAST:event_actualizarActionPerformed
 
-    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+    private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
         txtId.setText("");
         txtDni.setText("");
         txtApellido.setText("");
@@ -302,7 +303,7 @@ public class AlumnoG extends javax.swing.JInternalFrame {
         txtNacimiento.setText("");
         cbActivo.doClick();
         
-    }//GEN-LAST:event_salirActionPerformed
+    }//GEN-LAST:event_limpiarActionPerformed
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
         // TODO add your handling code here:
@@ -351,7 +352,7 @@ public class AlumnoG extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton salir;
+    private javax.swing.JButton limpiar;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtId;
